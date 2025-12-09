@@ -1,8 +1,8 @@
 # Heat Health Action Plan Registry
 
-This repository contains the heat-health action plans used in the analysis for the paper “A Critical Gap in Addressing Mental Health in Heat-Health Action Plans Worldwide.”
+This repository contains the heat-health action plans used in the analysis for the paper **“A Critical Gap in Addressing Mental Health in Heat-Health Action Plans Worldwide.”**
 
-Allison Stewart-Ruano, Raenita Spriggs, Emma L. Lawrance, Alessandro Massazza, Alexandra Czerniewska, Alejandro Saez Reale, Joy Shumake-Guillemot, Katherine M. Keyes, Yoshira Ornelas Van Horne, Robbie M. Parks
+**Authors:** Allison Stewart-Ruano, Raenita Spriggs, Emma L. Lawrance, Alessandro Massazza, Alexandra Czerniewska, Alejandro Saez Reale, Joy Shumake-Guillemot, Katherine M. Keyes, Yoshira Ornelas Van Horne, Robbie M. Parks
 
 To support continued research and access, this repository is being developed into a live, continually updated database of heat-health action plans. New plans can be submitted on the website and are automatically added to the registry and interactive website.
 
