@@ -60,7 +60,7 @@
     "submitted_at": "2025-12-10T17:28:42.385Z"
   },
   {
-    "title": "Plan de Contingencia Hidrometeorológica [Hydrometeorological Contingency Plan]",
+    "title": "Plan de Contingencia Hidrometeorol?gica [Hydrometeorological Contingency Plan]",
     "country": "Argentina",
     "region": "",
     "city": "La Plata",
@@ -70,5 +70,53 @@
     "submitter_name": "",
     "submitter_email": "",
     "submitted_at": "2025-12-10T18:18:10.048Z"
+  },
+  {
+    "title": "City of Greater Sudbury Hot Weather Response Plan",
+    "country": "Canada",
+    "region": "",
+    "city": "Sudbury",
+    "year": 2010,
+    "url": "https://www.greatersudbury.ca/sites/sudburyen/assets/content/div_emergprep/documents/hot_weather_response_plan_2010.pdf",
+    "pdf_drive_link": "",
+    "submitter_name": "",
+    "submitter_email": "",
+    "submitted_at": "2025-12-10T18:26:56.245Z"
+  },
+  {
+    "title": "Maryland Department of Health Extreme Heat Emergency Plan",
+    "country": "United States",
+    "region": "Maryland",
+    "city": "",
+    "year": 2023,
+    "url": "https://health.maryland.gov/preparedness/Documents/MDH%20Extreme%20Heat%20Emergency%20Plan%202023.pdf",
+    "pdf_drive_link": "",
+    "submitter_name": "",
+    "submitter_email": "",
+    "submitted_at": "2025-12-10T18:28:11.287Z"
+  },
+  {
+    "title": "City of Austin Heat Resilience Playbook",
+    "country": "United States",
+    "region": "",
+    "city": "Austin",
+    "year": 2023,
+    "url": "https://www.austintexas.gov/sites/default/files/files/Resilience/Austin-heat-resilience-playbook.pdf",
+    "pdf_drive_link": "",
+    "submitter_name": "",
+    "submitter_email": "",
+    "submitted_at": "2025-12-10T18:31:12.750Z"
+  },
+  {
+    "title": "BC Provincial Heat Alert and Response System (BC HARS)",
+    "country": "Canada ",
+    "region": "British Columbia",
+    "city": "",
+    "year": 2023,
+    "url": "",
+    "pdf_drive_link": "https://drive.google.com/open?id=1kQnvsvtTbjWKaEWF_EvwUlpRxD0CFYT9",
+    "submitter_name": "",
+    "submitter_email": "",
+    "submitted_at": "2025-12-10T18:35:07.708Z"
   }
 ]
