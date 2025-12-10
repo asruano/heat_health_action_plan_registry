@@ -39,6 +39,13 @@ function initTableView() {
       countryFilter.appendChild(opt);
     });
 
+    // sort plans by country before rendering
+plans.sort((a, b) => {
+  const cA = (a.country || "").toLowerCase();
+  const cB = (b.country || "").toLowerCase();
+  return cA.localeCompare(cB);
+});
+    
     // render initial table
     renderTable(plans, tableBody);
 
