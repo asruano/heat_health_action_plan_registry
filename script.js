@@ -171,6 +171,7 @@ function initMapView() {
       "South Africa": [-30.6, 22.9],
       "India": [20.6, 78.9],
       "Australia": [-25.3, 133.8],
+      "Argentina": [-38.4, -63.6],
       // Add more as you collect plans
     };
 
