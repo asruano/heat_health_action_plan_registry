@@ -67,7 +67,6 @@ plans.sort((a, b) => {
           plan.region,
           plan.city,
           plan.year,
-          plan.organization,
           plan.summary
         ]
           .map(v => (v || "").toString().toLowerCase())
@@ -107,9 +106,6 @@ function renderTable(plans, tableBody) {
 
     const yearTd = document.createElement("td");
     yearTd.textContent = plan.year || "";
-
-    const orgTd = document.createElement("td");
-    orgTd.textContent = plan.organization || "";
 
     const linkTd = document.createElement("td");
     const link = determinePlanLink(plan);
