@@ -140,8 +140,8 @@ tr.appendChild(regionTd);
 tr.appendChild(cityTd);
 tr.appendChild(yearTd);
 tr.appendChild(orgTd);
-tr.appendChild(mhPubTd);
 tr.appendChild(linkTd);
+tr.appendChild(mhPubTd);
 
     tableBody.appendChild(tr);
   });
