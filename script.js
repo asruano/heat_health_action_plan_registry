@@ -125,13 +125,23 @@ function renderTable(plans, tableBody) {
       linkTd.textContent = "No link available";
     }
 
-    tr.appendChild(titleTd);
-    tr.appendChild(countryTd);
-    tr.appendChild(regionTd);
-    tr.appendChild(cityTd);
-    tr.appendChild(yearTd);
-    tr.appendChild(orgTd);
-    tr.appendChild(linkTd);
+    // Mental health publication column
+const mhPubTd = document.createElement("td");
+
+// All current plans were included in the paper
+mhPubTd.textContent =
+  plan.included_in_paper === false
+    ? "Added after publication"
+    : "Included";
+
+tr.appendChild(titleTd);
+tr.appendChild(countryTd);
+tr.appendChild(regionTd);
+tr.appendChild(cityTd);
+tr.appendChild(yearTd);
+tr.appendChild(orgTd);
+tr.appendChild(mhPubTd);
+tr.appendChild(linkTd);
 
     tableBody.appendChild(tr);
   });
