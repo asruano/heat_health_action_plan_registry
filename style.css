@@ -57,12 +57,22 @@ input[type="text"], select {
   font-size: 0.9rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ---------------- TABLE ---------------- */
+
+.table-wrapper {
+  height: 70vh;              /* FIX: must be height, not max-height */
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd;
   background: white;
   border-radius: 6px;
-  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-spacing: 0;
+  border-collapse: separate; /* FIX: required for sticky headers */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
@@ -77,6 +87,15 @@ th {
   text-align: left;
 }
 
+/* ✅ THIS IS THE KEY STICKY RULE */
+#plansTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f0f4f8;
+  border-bottom: 2px solid #ccc;
+}
+
 tr:hover {
   background: #f9fcff;
 }
@@ -85,7 +104,6 @@ tr:hover {
   display: inline-block;
   padding: 0.35rem 0.6rem;
   border-radius: 4px;
-  border: none;
   font-size: 0.85rem;
   background: #0b5fa4;
   color: white;
@@ -96,6 +114,23 @@ tr:hover {
   background: #094a80;
 }
 
+/* -------- Country group rows (not sticky) -------- */
+
+.country-header-row td {
+  background-color: #f3f5f7;
+  font-size: 1rem;
+  padding: 0.75em;
+  border-top: 2px solid #ccc;
+}
+
+.country-count {
+  color: #666;
+  font-weight: normal;
+  margin-left: 0.5em;
+}
+
+/* ---------------- FOOTER ---------------- */
+
 footer {
   padding: 0.75rem 1.5rem;
   font-size: 0.8rem;
@@ -104,7 +139,8 @@ footer {
   background: #fafbfc;
 }
 
-/* Map page */
+/* ---------------- MAP ---------------- */
+
 #mapContainer {
   height: 70vh;
   margin-top: 1rem;
@@ -131,45 +167,4 @@ footer {
   table {
     font-size: 0.8rem;
   }
-}
-
-.country-header-row td {
-  background-color: #f3f5f7;
-  font-size: 1rem;
-  padding: 0.75em;
-  border-top: 2px solid #ccc;
-}
-
-.country-count {
-  color: #666;
-  font-weight: normal;
-  margin-left: 0.5em;
-}
-
-.country-header-row td {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-/* Force table area to scroll */
-.table-wrapper {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: auto;
-  border: 1px solid #ddd;
-}
-
-/* Sticky table header */
-#plansTable thead th {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #ffffff;
-}
-
-/* Prevent sticky from breaking due to table defaults */
-#plansTable {
-  border-collapse: separate;
-  border-spacing: 0;
 }
