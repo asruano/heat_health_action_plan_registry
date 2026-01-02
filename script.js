@@ -89,58 +89,90 @@ plans.sort((a, b) => {
 function renderTable(plans, tableBody) {
   tableBody.innerHTML = "";
 
+  // Group plans by country
+  const plansByCountry = {};
   plans.forEach(plan => {
-    const tr = document.createElement("tr");
-
-    const titleTd = document.createElement("td");
-    titleTd.textContent = plan.title || "";
-
-    const countryTd = document.createElement("td");
-    countryTd.textContent = plan.country || "";
-
-    const regionTd = document.createElement("td");
-    regionTd.textContent = plan.region || "";
-
-    const cityTd = document.createElement("td");
-    cityTd.textContent = plan.city || "";
-
-    const yearTd = document.createElement("td");
-    yearTd.textContent = plan.year || "";
-
-    const linkTd = document.createElement("td");
-    const link = determinePlanLink(plan);
-    if (link) {
-      const a = document.createElement("a");
-      a.href = link;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.className = "plan-link-btn";
-      a.textContent = "Open plan";
-      linkTd.appendChild(a);
-    } else {
-      linkTd.textContent = "No link available";
+    const country = plan.country || "Unknown";
+    if (!plansByCountry[country]) {
+      plansByCountry[country] = [];
     }
+    plansByCountry[country].push(plan);
+  });
 
-    // Mental health publication column
-const mhPubTd = document.createElement("td");
+  // Sort countries alphabetically
+  const sortedCountries = Object.keys(plansByCountry).sort((a, b) =>
+    a.localeCompare(b)
+  );
 
-// All current plans were included in the paper
-mhPubTd.textContent =
-  plan.included_in_paper === false
-    ? "Added after publication"
-    : "Included";
+  sortedCountries.forEach(country => {
+    const countryPlans = plansByCountry[country];
 
-tr.appendChild(titleTd);
-tr.appendChild(countryTd);
-tr.appendChild(regionTd);
-tr.appendChild(cityTd);
-tr.appendChild(yearTd);
-tr.appendChild(linkTd);
-tr.appendChild(mhPubTd);
+    /* ---------- Country header row ---------- */
+    const headerRow = document.createElement("tr");
+    headerRow.className = "country-header-row";
 
-    tableBody.appendChild(tr);
+    const headerCell = document.createElement("td");
+    headerCell.colSpan = 7; // match number of columns
+    headerCell.innerHTML = `
+      <strong>${country}</strong>
+      <span class="country-count">(${countryPlans.length})</span>
+    `;
+
+    headerRow.appendChild(headerCell);
+    tableBody.appendChild(headerRow);
+
+    /* ---------- Plan rows ---------- */
+    countryPlans.forEach(plan => {
+      const tr = document.createElement("tr");
+
+      const titleTd = document.createElement("td");
+      titleTd.textContent = plan.title || "";
+
+      const countryTd = document.createElement("td");
+      countryTd.textContent = plan.country || "";
+
+      const regionTd = document.createElement("td");
+      regionTd.textContent = plan.region || "";
+
+      const cityTd = document.createElement("td");
+      cityTd.textContent = plan.city || "";
+
+      const yearTd = document.createElement("td");
+      yearTd.textContent = plan.year || "";
+
+      const linkTd = document.createElement("td");
+      const link = determinePlanLink(plan);
+      if (link) {
+        const a = document.createElement("a");
+        a.href = link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "plan-link-btn";
+        a.textContent = "Open plan";
+        linkTd.appendChild(a);
+      } else {
+        linkTd.textContent = "No link available";
+      }
+
+      const mhTd = document.createElement("td");
+      mhTd.textContent =
+        plan.included_in_paper === false
+          ? "Added after publication"
+          : "Included";
+
+      tr.appendChild(titleTd);
+      tr.appendChild(countryTd);
+      tr.appendChild(regionTd);
+      tr.appendChild(cityTd);
+      tr.appendChild(yearTd);
+      tr.appendChild(linkTd);
+      tr.appendChild(mhTd);
+
+      tableBody.appendChild(tr);
+    });
   });
 }
+
 
 // determine which link to use for the plan
 function determinePlanLink(plan) {
