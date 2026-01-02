@@ -175,17 +175,33 @@ function initMapView() {
 
     // Simple country -> lat/lng mapping (extend over time)
     const countryCoords = {
-      "USA": [37.8, -96.9],
-      "United States": [37.8, -96.9],
-      "Mexico": [23.6, -102.5],
       "Canada": [56.1, -106.3],
+      "United States": [37.8, -96.9],
+      "USA": [37.8, -96.9],
+      "Argentina": [-38.4, -63.6],
       "United Kingdom": [55.3, -3.4],
       "UK": [55.3, -3.4],
-      "South Africa": [-30.6, 22.9],
+      "Ireland": [53.1, -8.2],
+      "France": [46.2, 2.2],
+      "Germany": [51.2, 10.4],
+      "Italy": [41.9, 12.6],
+      "Spain": [40.4, -3.7],
+      "Portugal": [39.4, -8.2],
+      "Netherlands": [52.1, 5.3],
+      "Belgium": [50.8, 4.5],
+      "Luxembourg": [49.8, 6.1],
+      "Switzerland": [46.8, 8.2],
+      "Austria": [47.5, 14.6],
+      "Sweden": [62.0, 15.0],
+      "Lithuania": [55.2, 23.9],
+      "North Macedonia": [41.6, 21.7],
       "India": [20.6, 78.9],
+      "Pakistan": [30.4, 69.3],
+      "Bangladesh": [23.7, 90.4],
+      "Nepal": [28.4, 84.1],
+      "South Africa": [-30.6, 22.9],
       "Australia": [-25.3, 133.8],
-      "Argentina": [-38.4, -63.6],
-      // Add more as you collect plans
+      "New Zealand": [-40.9, 174.9]
     };
 
     // Group plans by country
