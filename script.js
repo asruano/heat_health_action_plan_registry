@@ -113,10 +113,8 @@ function renderTable(plans, tableBody) {
 
     const headerCell = document.createElement("td");
     headerCell.colSpan = 7; // match number of columns
-    headerCell.innerHTML = `
-      <strong>${country}</strong>
-      <span class="country-count">(${countryPlans.length})</span>
-    `;
+    headerCell.innerHTML = `<strong>${country}</strong>`;
+
 
     headerRow.appendChild(headerCell);
     tableBody.appendChild(headerRow);
