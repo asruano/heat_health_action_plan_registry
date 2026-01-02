@@ -152,17 +152,24 @@ footer {
   z-index: 2;
 }
 
+/* Force table area to scroll */
 .table-wrapper {
   max-height: 70vh;
   overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd;
 }
 
+/* Sticky table header */
 #plansTable thead th {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background-color: #ffffff;
-  border-bottom: 2px solid #ccc;
 }
 
-
+/* Prevent sticky from breaking due to table defaults */
+#plansTable {
+  border-collapse: separate;
+  border-spacing: 0;
+}
